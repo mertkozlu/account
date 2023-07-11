@@ -13,7 +13,7 @@ data class Customer(
         val name: String?,
         val surname: String?,
 
-        @OneToMany(mappedBy = "customer", fetch = FetchType.LAZY)
+        @OneToMany(mappedBy = "customer", fetch = FetchType.EAGER)
         val accounts: Set<Account>
 ) {
     constructor(name: String, surname: String) : this("", name, surname, HashSet())
@@ -42,3 +42,4 @@ data class Customer(
 
     }
 }
+
